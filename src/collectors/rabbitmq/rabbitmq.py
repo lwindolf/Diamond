@@ -100,7 +100,7 @@ class RabbitMQCollector(diamond.collector.Collector):
                 content = httpclient.do_call('nodes', 'GET')
                 self.publish('cluster.nodes', len(content))
         except Exception, e:
-            self.log.error('Couldnt connect to rabbitmq %s', e)
+            self.log.error('Could not connect to rabbitmq %s', e)
             return {}
 
     def collect(self):
